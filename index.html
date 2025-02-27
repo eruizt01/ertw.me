@@ -3,10 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ERTW</title>
+    <title>EugenioRTW</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fafafa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 300;
+        }
+
+        .bold {
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .link-item {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .link-item:last-child {
+            border-right: none;
+        }
+
+        .emoji {
+            margin-left: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to ERTW</h1>
-    <p>This is my simple website hosted for free!</p>
+
+    <div class="container">
+        <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-pic">
+        <h1><span class="bold">Eugenio</span>RTW</h1>
+        <p class="subtitle">
+            AI enthusiast & legal tech innovator.<br>
+            currently: Exploring <span class="bold">AI & Antitrust</span>.
+        </p>
+
+        <div class="links">
+            <a href="https://github.com/yourusername" class="link-item">github <span class="emoji">💻</span></a>
+            <a href="https://linkedin.com/in/yourusername" class="link-item">linkedin <span class="emoji">🤝</span></a>
+            <a href="https://buymeacoffee.com/yourusername" class="link-item">coffee <span class="emoji">☕</span></a>
+        </div>
+    </div>
+
 </body>
 </html>
