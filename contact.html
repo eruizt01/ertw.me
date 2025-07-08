@@ -3,114 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EugenioRTW</title>
+  <title>Contact – EugenioRTW</title>
   <style>
-    :root {
-      --bg: #fafafa;
-      --fg: #333;
-      --fg-light: #666;
-    }
-    *, *::before, *::after { box-sizing: border-box }
-
     body {
-      margin: 0; 
-      padding: 0;
+      margin: 0; padding: 2rem;
       font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: #fafafa; color: #333;
+      display: flex; justify-content: center; align-items: flex-start;
       min-height: 100vh;
     }
-
-    .container {
+    .form-container {
       background: #fff;
-      padding: 3rem;
-      max-width: 1200px;
-      width: 90%;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 12px 36px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      width: 100%; max-width: 500px;
     }
-    .container:hover { transform: translateY(-6px); }
-
-    .profile-frame {
-      --size: clamp(360px, 30%, 600px);
-      width: var(--size);
-      height: var(--size);
-      margin: 0 auto 1.5rem;
-      padding: 4px;
-      border: 6px solid #000;
-      border-radius: 50%;
-      overflow: hidden;
-      transition: transform 0.4s ease;
-    }
-    .profile-frame:hover { transform: scale(1.05); }
-
-    .profile-pic {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-      border-radius: 50%;
-    }
-
     h1 {
-      margin: 0 0 0.75rem;
-      font-size: 4rem; font-weight: 300;
-      letter-spacing: 1px;
+      margin-top: 0; font-size: 2rem; font-weight: 300;
+      text-align: center;
     }
-    h1 .bold { font-weight: 600; }
-
-    .subtitle {
-      margin: 0 0 3rem;
-      font-size: 1.5rem; color: var(--fg-light);
-      line-height: 1.6;
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-size: 1rem;
     }
-    .subtitle .bold { color: #000; }
-
-    nav.links {
-      display: flex;
-      justify-content: center;
-      font-size: 1.5rem;
-      align-items: center;
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+      margin-bottom: 0.8rem;
     }
-    nav.links .link-item {
-      text-decoration: none;
-      color: var(--fg);
+    button {
+      margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
-      transition: background 0.2s, color 0.2s;
+      font-size: 1rem;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: opacity 0.2s;
     }
-    nav.links .link-item:hover {
-      background: #000; color: #fff;
-    }
-    nav.links .separator {
-      margin: 0 0.5rem;
-      color: var(--fg-light);
-    }
+    button:hover { opacity: 0.85; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="profile-frame">
-      <img src="images/Profile.jpg" alt="Profile Picture" class="profile-pic">
-    </div>
+  <div class="form-container">
+    <h1>Contact Me</h1>
+    <form action="https://formspree.io/f/mgvyjlbb" method="POST">
+      <!-- redirect back to index.html -->
+      <input type="hidden" name="_next" value="index.html">
+      <!-- honeypot trap -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-    <h1><span class="bold">Eugenio</span>RTW</h1>
-    <p class="subtitle">
-      AI enthusiast &amp; legal tech innovator.<br>
-      currently: Exploring <span class="bold">AI &amp; Antitrust</span>.
-    </p>
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
 
-    <nav class="links">
-      <a href="https://github.com/yourusername" class="link-item">💻 GitHub</a>
-      <span class="separator">|</span>
-      <a href="https://linkedin.com/in/yourusername" class="link-item">🤝 LinkedIn</a>
-      <span class="separator">|</span>
-      <a href="articles.html" class="link-item">📄 Articles</a>
-      <span class="separator">|</span>
-      <a href="contact.html" class="link-item">📬 Contact</a>
-    </nav>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send 📤</button>
+    </form>
   </div>
 </body>
 </html>
