@@ -3,117 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Eugenio</title>
+  <title>Contact – EugenioRTW</title>
   <style>
-    :root {
-      --bg: #fafafa;
-      --fg: #333;
-      --fg-light: #666;
-      --primary: #000;
-    }
-    *, *::before, *::after { box-sizing: border-box }
     body {
-      margin: 0; padding: 0;
+      margin: 0; padding: 2rem;
       font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      display: flex; justify-content: center; align-items: center;
+      background: #fafafa; color: #333;
+      display: flex; justify-content: center; align-items: flex-start;
       min-height: 100vh;
     }
-    .container {
+    .form-container {
       background: #fff;
-      padding: 3rem;
-      width: 90%; max-width: 600px;
-      border-radius: 12px;
+      padding: 2rem;
+      border-radius: 8px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      text-align: center;
+      width: 100%;
+      max-width: 500px;
     }
     h1 {
       margin-top: 0;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 300;
+      text-align: center;
     }
     label {
       display: block;
-      margin: 1.2rem 0 0.4rem;
-      text-align: left;
+      margin: 1rem 0 0.5rem;
       font-size: 1rem;
-      color: var(--fg-light);
     }
     input, textarea {
       width: 100%;
       padding: 0.75rem;
       font-size: 1rem;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 4px;
       resize: vertical;
       margin-bottom: 0.8rem;
     }
-    .g-recaptcha {
-      margin: 1rem 0;
-      display: inline-block;
-      text-align: left;
-    }
     button {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
-      background: var(--primary);
+      background: #000;
       color: #fff;
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
       transition: opacity 0.2s ease;
     }
-    button:hover { opacity: 0.85 }
+    button:hover {
+      opacity: 0.85;
+    }
   </style>
-
-  <!-- load reCAPTCHA library (optional—you can remove this if you aren’t using reCAPTCHA) -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
-  <div class="container">
+  <div class="form-container">
     <h1>Contact Me</h1>
-    <form
-      action="https://formspree.io/f/YOUR_FORM_ID"
-      method="POST"
-    >
-      <!-- 1) Redirect back to index.html on success -->
+    <form action="https://formspree.io/f/mgvyjlbb" method="POST">
+      <!-- redirect back to homepage on success -->
       <input type="hidden" name="_next" value="index.html">
+      <!-- honeypot trap -->
+      <input type="text"
+             name="_gotcha"
+             style="display:none;"
+             tabindex="-1"
+             autocomplete="off">
 
-      <!-- 2) Honeypot field: hidden from humans, traps bots -->
-      <input
-        type="text"
-        name="_gotcha"
-        style="display:none;"
-        tabindex="-1"
-        autocomplete="off"
-      />
-
-      <!-- 3) Your real form fields -->
       <label for="email">Your Email</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="you@example.com"
-        required
-      >
+      <input type="email" id="email" name="email" required>
 
       <label for="message">Message</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="5"
-        placeholder="What’s on your mind?"
-        required
-      ></textarea>
-
-      <!-- 4) (Optional) reCAPTCHA widget -->
-      <div
-        class="g-recaptcha"
-        data-sitekey="YOUR_SITE_KEY"
-      ></div>
+      <textarea id="message" name="message" rows="6" required></textarea>
 
       <button type="submit">Send 📤</button>
     </form>
