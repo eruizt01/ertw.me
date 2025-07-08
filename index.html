@@ -9,7 +9,7 @@
       --bg: #fafafa;
       --fg: #333;
       --fg-light: #666;
-      --accent: #0069d9;
+      --accent: #000;      /* not used for frame now */
     }
     *, *::before, *::after { box-sizing: border-box }
 
@@ -24,23 +24,24 @@
 
     .container {
       background: #fff;
-      padding: 2rem;
-      max-width: 400px; width: 90%;
+      padding: 3rem;
+      max-width: 1200px;   /* ≃3× the previous 400px */
+      width: 90%;
       text-align: center;
       border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.08);
       transition: transform 0.3s ease;
     }
-    .container:hover { transform: translateY(-4px) }
+    .container:hover { transform: translateY(-6px) }
 
     /* FRAME around the pic */
     .profile-frame {
-      --size: clamp(120px, 30%, 200px);
+      --size: clamp(360px, 30%, 600px); /* 3× larger than before */
       width: var(--size);
       height: var(--size);
-      margin: 0 auto 1rem;
+      margin: 0 auto 1.5rem;
       padding: 4px;
-      border: 3px solid var(--accent);
+      border: 6px solid #000;           /* thicker & black */
       border-radius: 50%;
       overflow: hidden;
       transition: transform 0.4s ease;
@@ -52,42 +53,44 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 50%; /* redundant with overflow, but safe */
+      border-radius: 50%;
     }
 
     h1 {
-      margin: 0 0 0.5rem;
-      font-size: 2rem; font-weight: 300;
-      letter-spacing: 0.5px;
+      margin: 0 0 0.75rem;
+      font-size: 4rem;    /* scaled up from 2rem */
+      font-weight: 300;
+      letter-spacing: 1px;
     }
     h1 .bold { font-weight: 600 }
 
     .subtitle {
-      margin: 0 0 2rem;
-      font-size: 0.95rem; color: var(--fg-light);
-      line-height: 1.4;
+      margin: 0 0 3rem;
+      font-size: 1.5rem;  /* scaled up from 0.95rem */
+      color: var(--fg-light);
+      line-height: 1.6;
     }
-    .subtitle .bold { color: var(--accent) }
+    .subtitle .bold { color: #000 }
 
     .links {
-      display: flex; justify-content: center; gap: 1rem;
+      display: flex; justify-content: center; gap: 2rem;
     }
     .link-item {
-      font-size: 0.95rem;
+      font-size: 1.5rem;  /* scaled up from 0.95rem */
       text-decoration: none;
       color: var(--fg);
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
       border: 1px solid transparent;
-      display: flex; align-items: center; gap: 0.3rem;
+      display: flex; align-items: center; gap: 0.5rem;
       transition: all 0.2s ease;
     }
     .link-item:hover {
-      background: var(--accent);
+      background: #000;
       color: #fff;
-      border-color: var(--accent);
+      border-color: #000;
     }
-    .emoji { font-size: 1.1rem }
+    .emoji { font-size: 1.5rem }
   </style>
 </head>
 <body>
@@ -103,10 +106,10 @@
     </p>
 
     <div class="links">
-      <a href="https://github.com/yourusername" class="link-item">
+      <a href="https://github.com/eruizt01" class="link-item">
         💻 Github
       </a>
-      <a href="https://linkedin.com/in/yourusername" class="link-item">
+      <a href="https://www.linkedin.com/in/ejr-wiegand/" class="link-item">
         🤝 LinkedIn
       </a>
       <a href="articles.html" class="link-item">
