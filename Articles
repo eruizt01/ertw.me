@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Articles – EugenioRTW</title>
+  <style>
+    body {
+      margin: 0; padding: 2rem;
+      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+      background: #fafafa; color: #333;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem; font-weight: 300;
+    }
+    ul {
+      list-style: none; padding: 0;
+      max-width: 600px; margin: 0 auto;
+    }
+    li {
+      margin: 0.8rem 0;
+    }
+    a {
+      text-decoration: none; color: #0069d9;
+      font-size: 1.1rem;
+      transition: color 0.2s ease;
+    }
+    a:hover { color: #004a9f; }
+  </style>
+</head>
+<body>
+  <h1>My Articles</h1>
+  <ul>
+    <li><a href="https://centrocompetencia.com/from-theory-to-tech-computational-antitrust/">Computational Antitrust: From Theory to Tech</a></li>
+  </ul>
+</body>
