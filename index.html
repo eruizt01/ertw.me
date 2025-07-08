@@ -1,89 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EugenioRTW</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #fafafa;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EugenioRTW</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --fg: #333;
+      --fg-light: #666;
+      --accent: #0069d9;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
 
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-        }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh;
+    }
 
-        .profile-pic {
-            width: 40%;
-            max-width: 200px;
-            height: auto;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      max-width: 400px; width: 90%;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    .container:hover { transform: translateY(-4px); }
 
-        h1 {
-            font-size: 36px;
-            font-weight: 300;
-        }
+    /* framed avatar */
+    .profile-frame {
+      display: inline-block;
+      padding: 4px;
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      transition: transform 0.4s ease;
+    }
+    .profile-frame:hover { transform: scale(1.05); }
 
-        .bold {
-            font-weight: 600;
-        }
+    .profile-pic {
+      display: block;
+      width: clamp(120px, 30%, 200px);
+      height: auto;
+      border-radius: 50%;
+      object-fit: cover;
+    }
 
-        .subtitle {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #666;
-        }
+    h1 {
+      margin: 1rem 0 0.5rem;
+      font-size: 2rem; font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    h1 .bold { font-weight: 600; }
 
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 30px;
-        }
+    .subtitle {
+      margin: 0.5rem 0 2rem;
+      font-size: 0.95rem; color: var(--fg-light);
+      line-height: 1.4;
+    }
+    .subtitle .bold { color: var(--accent); }
 
-        .link-item {
-            text-decoration: none;
-            color: #333;
-            font-size: 18px;
-            padding: 10px 20px;
-            border-right: 1px solid #ddd;
-        }
-
-        .link-item:last-child {
-            border-right: none;
-        }
-
-        .emoji {
-            margin-left: 5px;
-        }
-    </style>
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .link-item {
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--fg);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid transparent;
+      display: flex; align-items: center; gap: 0.3rem;
+      transition: all 0.2s ease;
+    }
+    .link-item:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .emoji { font-size: 1.1rem; }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <img src="images/Profile.jpg" alt="Profile Picture" class="profile-pic">
-        <h1><span class="bold">Eugenio</span>RTW</h1>
-        <p class="subtitle">
-            AI enthusiast & legal tech innovator.<br>
-            currently: Exploring <span class="bold">AI & Antitrust</span>.
-        </p>
-
-        <div class="links">
-            <a href="https://github.com/yourusername" class="link-item">github <span class="emoji">💻</span></a>
-            <a href="https://linkedin.com/in/yourusername" class="link-item">linkedin <span class="emoji">🤝</span></a>
-            <a href="https://buymeacoffee.com/yourusername" class="link-item">coffee <span class="emoji">☕</span></a>
-        </div>
+  <div class="container">
+    <div class="profile-frame">
+      <img src="images/Profile.jpg" alt="Profile Picture" class="profile-pic">
     </div>
 
+    <h1><span class="bold">Eugenio</span>RTW</h1>
+    <p class="subtitle">
+      AI enthusiast &amp; legal tech innovator.<br>
+      currently: Exploring <span class="bold">AI &amp; Antitrust</span>.
+    </p>
+
+    <div class="links">
+      <a href="https://github.com/yourusername" class="link-item">
+        💻 Github
+      </a>
+      <a href="https://linkedin.com/in/yourusername" class="link-item">
+        🤝 LinkedIn
+      </a>
+      <a href="articles.html" class="link-item">
+        📄 Articles
+      </a>
+    </div>
+  </div>
 </body>
 </html>
