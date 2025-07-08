@@ -68,7 +68,7 @@
     button:hover { opacity: 0.85 }
   </style>
 
-  <!-- load reCAPTCHA library -->
+  <!-- load reCAPTCHA library (optional—you can remove this if you aren’t using reCAPTCHA) -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
@@ -78,9 +78,19 @@
       action="https://formspree.io/f/YOUR_FORM_ID"
       method="POST"
     >
-      <!-- redirect back to index.html on success -->
+      <!-- 1) Redirect back to index.html on success -->
       <input type="hidden" name="_next" value="index.html">
 
+      <!-- 2) Honeypot field: hidden from humans, traps bots -->
+      <input
+        type="text"
+        name="_gotcha"
+        style="display:none;"
+        tabindex="-1"
+        autocomplete="off"
+      />
+
+      <!-- 3) Your real form fields -->
       <label for="email">Your Email</label>
       <input
         type="email"
@@ -99,7 +109,7 @@
         required
       ></textarea>
 
-      <!-- reCAPTCHA widget -->
+      <!-- 4) (Optional) reCAPTCHA widget -->
       <div
         class="g-recaptcha"
         data-sitekey="YOUR_SITE_KEY"
