@@ -5,34 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Articles – EugenioRTW</title>
   <style>
+    :root {
+      --bg: #fafafa;
+      --fg: #333;
+      --fg-light: #666;
+    }
     body {
-      margin: 0; padding: 2rem;
+      margin: 0;
+      padding: 2rem;
       font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background: #fafafa; color: #333;
+      background: var(--bg);
+      color: var(--fg);
       text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
     }
     h1 {
       margin-bottom: 1.5rem;
-      font-size: 2rem; font-weight: 300;
+      font-size: 2rem;
+      font-weight: 300;
     }
     ul {
-      list-style: none; padding: 0;
-      max-width: 600px; margin: 0 auto;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
     li {
       margin: 0.8rem 0;
     }
-    a {
-      text-decoration: none; color: #0069d9;
+    a.article-link {
+      text-decoration: none;
+      color: #0069d9;
       font-size: 1.1rem;
       transition: color 0.2s ease;
     }
-    a:hover { color: #004a9f; }
+    a.article-link:hover {
+      color: #004a9f;
+    }
+    nav.links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.25rem;
+      margin-top: 2rem;
+    }
+    nav.links .link-item {
+      text-decoration: none;
+      color: var(--fg);
+      padding: 0.5rem 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav.links .link-item:hover {
+      background: #000;
+      color: #fff;
+    }
+    nav.links .separator {
+      margin: 0 0.5rem;
+      color: var(--fg-light);
+    }
   </style>
 </head>
 <body>
-  <h1>My Articles</h1>
-  <ul>
-    <li><a href="https://centrocompetencia.com/from-theory-to-tech-computational-antitrust/">Computational Antitrust: From Theory to Tech</a></li>
-  </ul>
+  <div class="container">
+    <h1>My Articles</h1>
+
+    <ul>
+      <li>
+        <a
+          href="https://centrocompetencia.com/from-theory-to-tech-computational-antitrust/"
+          class="article-link"
+          target="_blank"
+        >
+          Computational Antitrust: From Theory to Tech
+        </a>
+      </li>
+      <!-- add more <li>…</li> items here as needed -->
+    </ul>
+
+    <nav class="links">
+      <a href="index.html" class="link-item">🏠 Home</a>
+      <span class="separator">|</span>
+      <a href="contact.html" class="link-item">📬 Contact</a>
+    </nav>
+  </div>
 </body>
+</html>
